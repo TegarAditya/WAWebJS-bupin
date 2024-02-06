@@ -1,0 +1,12 @@
+{
+  "name": "wa-web-js",
+  "type": "module",
+  "packageManager": "yarn@4.1.0",
+  "scripts": {
+    "start": "node ./index.js --env-file .env"
+  },
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.23.0"
+  }
+}
