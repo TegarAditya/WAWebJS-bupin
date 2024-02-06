@@ -285,6 +285,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:^16.4.1":
+  version: 16.4.1
+  resolution: "dotenv@npm:16.4.1"
+  checksum: 10c0/ef3d95f48f38146df0881a4b58447ae437d2da3f6d645074b84de4e64ef64ba75fc357c5ed66b3c2b813b5369fdeb6a4777d6ade2d50e54eed6aa06dddc98bc4
+  languageName: node
+  linkType: hard
+
 "duplexer2@npm:~0.1.4":
   version: 0.1.4
   resolution: "duplexer2@npm:0.1.4"
@@ -964,6 +971,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "wa-web-js@workspace:."
   dependencies:
+    dotenv: "npm:^16.4.1"
     qrcode-terminal: "npm:^0.12.0"
     whatsapp-web.js: "npm:^1.23.0"
   languageName: unknown

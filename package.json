@@ -7,6 +7,7 @@
     "start:v": "NODE_DEBUG=cluster,net,http,fs,tls,module,timers node ./index.cjs --env-file .env"
   },
   "dependencies": {
+    "dotenv": "^16.4.1",
     "qrcode-terminal": "^0.12.0",
     "whatsapp-web.js": "^1.23.0"
   }
