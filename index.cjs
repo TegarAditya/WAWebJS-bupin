@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const qrcode = require('qrcode-terminal');
 
-const { Client, LocalAuth } = require('whatsapp-web.js');
+const { Client, LocalAuth, Buttons } = require('whatsapp-web.js');
 const client = new Client({
     authStrategy: new LocalAuth()
 });
@@ -22,11 +22,7 @@ client.on("message", async (msg) => {
             const code = parts[1].trim();
 
             await msg.reply(
-                `Halo! Terima kasih telah menghubungi kami. Pesan Anda akan diteruskan kepada tim terkait. Harap pastikan untuk memperbarui aplikasi, memeriksa kamera, dan koneksi internet Anda sebelum menggunakan QR Scanner. Harap bersabar, kami akan segera memberikan tanggapan atau solusi yang sesuai. Terima kasih atas pengertiannya!`
-            );
-
-            await client.sendMessage(msg.from,
-                `Laporan atas kode ${code} akan segera Kami investigasi dan tindak lanjuti. Mohon maaf atas ketidaknyamanannya 🙏.`
+                `Halo! Terima kasih telah menghubungi kami. Pesan Anda akan diteruskan kepada tim terkait. Harap pastikan untuk memperbarui aplikasi, memeriksa kamera, dan koneksi internet Anda sebelum menggunakan QR Scanner. Harap bersabar, kami akan segera memberikan tanggapan atau solusi yang sesuai. Terima kasih atas pengertiannya. 🙏\n\nKode QR: ${code}`
             );
 
             redirectMessage(msg.body, process.env.PUBLIC_DIRECT_NUMBER, client);
