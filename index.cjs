@@ -2,9 +2,17 @@ require('dotenv').config()
 
 const qrcode = require('qrcode-terminal');
 
-const { Client, LocalAuth, Buttons } = require('whatsapp-web.js');
+const { Client, LocalAuth } = require('whatsapp-web.js');
 const client = new Client({
-    authStrategy: new LocalAuth()
+    authStrategy: new LocalAuth(),
+    webVersionCache:
+    {
+        remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2402.5-beta.html',
+        type: 'remote'
+    },
+    puppeteer: {
+        args: ['--no-sanbox'],
+    },
 });
 
 client.on("qr", (qr) => {
