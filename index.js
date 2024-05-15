@@ -1,10 +1,10 @@
-import * as qrCodeTerminal from "qrcode-terminal";
-import Whatsapp from "whatsapp-web.js";
+import qrcode from "qrcode-terminal";
+import WAWebJS from "whatsapp-web.js";
 import redirectMessage from "./src/lib/utils/redirectMessage.js";
 import isReportMessage from "./src/lib/utils/validateReportMessage.js";
 
-const { generate } = qrCodeTerminal;
-const { Client, LocalAuth } = Whatsapp;
+const { generate } = qrcode;
+const { Client, LocalAuth } = WAWebJS;
 
 const client = new Client({
     authStrategy: new LocalAuth(),
