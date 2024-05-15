@@ -7,7 +7,9 @@ const { generate } = qrcode;
 const { Client, LocalAuth } = WAWebJS;
 
 const client = new Client({
-    authStrategy: new LocalAuth(),
+    authStrategy: new LocalAuth({
+        clientId: "firstresponder"
+    }),
     puppeteer: {
         args: ["--no-sandbox"],
     },
