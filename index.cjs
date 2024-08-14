@@ -1,12 +1,13 @@
-require('dotenv').config()
+require("dotenv").config();
 
-const qrcode = require('qrcode-terminal');
+const qrcode = require("qrcode-terminal");
 
-const { Client, LocalAuth } = require('whatsapp-web.js');
+const { Client, LocalAuth } = require("whatsapp-web.js");
 const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
-        args: ['--no-sanbox'],
+        headless: true,
+        args: ["--no-sandbox", "--disable-setuid-sandbox"],
     },
 });
 
